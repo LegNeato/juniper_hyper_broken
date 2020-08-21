@@ -8,9 +8,9 @@ edition = "2018"
 
 [dependencies]
 # See https://github.com/graphql-rust/juniper/issues/45.
-juniper = { version = "0.14.2", features = ["expose-test-schema"] }
+tokio = { version = "*", features = ["default", "macros"] }
+pretty_env_logger = "*"
+juniper = { git = "https://github.com/graphql-rust/juniper.git", features = ["expose-test-schema"] }
+juniper_hyper = { git = "https://github.com/graphql-rust/juniper.git" }
 
 hyper = "0.13.7"
-
-# Failed attempt to get rid of "can't find crate" error.
-serde_json = "1.0.57"

@@ -21,8 +21,7 @@ async fn main() {
     let root_node = Arc::new(RootNode::new(
         Query,
         EmptyMutation::<Database>::new(),
-        // Subscriptions haven't landed in the latest release AFAICT, so we drop it for now. That's ok.
-        // EmptySubscription::<Database>::new(),
+        EmptySubscription::<Database>::new(),
     ));
 
     let new_service = make_service_fn(move |_| {
